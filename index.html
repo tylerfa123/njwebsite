@@ -290,9 +290,11 @@
 
 @media (max-width: 800px) {
   .nav-links {
-    justify-content: center;
-    margin-top: 10px;
+    justify-content: center !important;  /* this is the key */
+    width: 100%;
     flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
   }
 
   .nav-links a,
@@ -304,6 +306,7 @@
     margin-right: 0;
   }
 }
+
 
 
 
