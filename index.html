@@ -245,38 +245,11 @@
   max-width: 100%;
 }
 
-.site-footer {
-  background-color: #1e293b;
-  color: white;
-  padding: 20px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-  font-size: 18px;
-  gap: 20px;
-}
-
-.site-footer .footer-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-}
-
-/* Shrink footer on screens 800px and below */
 @media (max-width: 800px) {
-  .site-footer {
-    font-size: 14px;
-    flex-wrap: wrap;
+  .nav-phone {
+    margin: 10px auto 0 auto !important;
     justify-content: center;
-    text-align: center;
-    gap: 12px;
-  }
-
-  .site-footer .footer-item {
-    flex: 1 1 100%;
-    justify-content: center;
+    display: flex;
   }
 }
 
@@ -292,9 +265,11 @@
           <h2 style="margin: 0;" class="nav-heading">NORTH JERSEY INSURANCE GROUP</h2>
         </div>
         <div>
-            <a href="tel:2017738989" style="color: white; font-size: 16px; text-decoration: none; display: flex; align-items: center; gap: 8px; margin-left: 25px;">
-      <img src="https://img.icons8.com/ios/50/ffffff/phone.png" alt="Phone Icon" style="height: 18px;">
-      201-773-8989
+            <a href="tel:2017738989" class="nav-phone" style="color: white; font-size: 16px; text-decoration: none; display: flex; align-items: center; gap: 8px; margin-left: 25px;">
+  <img src="https://img.icons8.com/ios/50/ffffff/phone.png" alt="Phone Icon" style="height: 18px;">
+  201-773-8989
+</a>
+
             </div>
             <div>
   <a href="index.html#top">Home</a>
@@ -458,13 +433,13 @@ document.getElementById("dynamicSubject").value = `Quote Request from ${fname} $
 
 </section>
 
-<footer class="site-footer" style="background-color: #1e293b; color: white; padding: 25px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-  <div class="site-footer" style="font-size: 20px; font-weight: bold;">Contact Us</div>
-  <div class="site-footer" style="display: flex; align-items: center; gap: 8px;">
+<footer style="background-color: #1e293b; color: white; padding: 25px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+  <div style="font-size: 20px; font-weight: bold;">Contact Us</div>
+  <div style="display: flex; align-items: center; gap: 8px;">
     <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email Icon" style="height: 20px; filter: brightness(0) invert(1);">
     <p style="margin: 0;">jmalq@njinsgrp.com</p>
   </div>
-  <div class="site-footer" style="display: flex; align-items: center; gap: 10px;">
+  <div style="display: flex; align-items: center; gap: 10px;">
     <img src="https://img.icons8.com/ios/50/ffffff/phone.png" alt="Phone Icon" style="height: 18px;">
     <span>201-773-8989</span>
   </div>
