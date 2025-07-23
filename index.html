@@ -248,11 +248,29 @@
       transform: scale(1.03);
     }
 
+    /* Hamburger menu styles */
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
     /* Mobile-specific styles */
     @media screen and (max-width: 768px) {
       .service-cards {
         flex-direction: column;
         flex-wrap: wrap;
+        width: 100%;
+        margin: 0 auto;
       }
 
       .card {
@@ -260,26 +278,59 @@
         margin-bottom: 15px;
       }
 
+      .contact-us > div {
+        width: 100%;
+        margin: 10px auto;
+        padding: 0 20px;
+      }
+
+      .headline h1 {
+        font-size: 32px;
+      }
+
+      .headline p {
+        font-size: 16px;
+      }
+
       .nav {
         flex-direction: column;
         padding: 10px 20px;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-links.active {
+        display: flex;
       }
 
       .nav a, .nav .quote-btn {
         margin: 10px 0;
+        display: block;
       }
 
-      .nav div {
+      .hamburger {
+        display: block;
+        align-self: flex-end;
+      }
+
+      .dropdown {
+        width: 100%;
+      }
+
+      .dropdown-content {
+        position: static;
+        width: 100%;
+        background: linear-gradient(to right, #1e293b, #0f172a);
+      }
+
+      .dropdown-content a {
         text-align: center;
-        margin: 10px 0;
-      }
-
-      .headline h1 {
-        font-size: 36px;
-      }
-
-      .headline p {
-        font-size: 18px;
       }
 
       .contact-us form {
@@ -309,9 +360,12 @@
 <body id="top">
   <header>
     <div class="nav">
-      <div style="display: flex; align-items: center; gap: 0px;">
-        <img src="NJIGIMAGE.png" alt="NJIG Logo" style="height: 80px;">
-        <h2 style="margin: 0;">NORTH JERSEY INSURANCE GROUP</h2>
+      <div style="display: flex; align-items: center; gap: 0px; width: 100%; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: 0px;">
+          <img src="NJIGIMAGE.png" alt="NJIG Logo" style="height: 80px;">
+          <h2 style="margin: 0;">NORTH JERSEY INSURANCE GROUP</h2>
+        </div>
+        <button class="hamburger">☰</button>
       </div>
       <div>
         <a href="tel:2017738989" style="color: white; font-size: 16px; text-decoration: none; display: flex; align-items: center; gap: 8px; margin-left: 25px;">
@@ -319,7 +373,7 @@
           201-773-8989
         </a>
       </div>
-      <div>
+      <div class="nav-links">
         <a href="index.html#top">Home</a>
         <a href="index.html#about">About</a>
         <div class="dropdown">
@@ -482,6 +536,13 @@
         alert("❌ There was an error. Please try again.");
         console.error(error);
       });
+    });
+
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
     });
   </script>
 </body>
