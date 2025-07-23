@@ -84,12 +84,6 @@
       border-radius: 2px;
     }
 
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0px;
-    }
-
     .headline {
       max-width: 800px;
       margin: 180px auto 0;
@@ -276,23 +270,23 @@
       }
 
       .nav {
-        flex-wrap: wrap;
         padding: 10px 15px;
       }
 
-      .nav-logo {
+      .nav > div:nth-child(1) {
         flex: 1;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
       }
 
-      .nav-logo h2 {
-        font-size: 1.2rem;
+      .nav > div:nth-child(2) {
+        display: none;
       }
 
-      .nav-logo .phone-link {
-        margin-left: 0;
+      .nav > div:nth-child(3) {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
       }
 
       .nav-menu {
@@ -315,10 +309,6 @@
         text-align: center;
       }
 
-      .hamburger {
-        display: flex;
-      }
-
       .dropdown {
         width: 100%;
         text-align: center;
@@ -329,11 +319,21 @@
         width: 100%;
       }
 
+      .headline {
+        max-width: 90%;
+        margin: 100px auto 0;
+      }
+
       .headline h1 {
         font-size: 28px;
       }
 
       .headline p {
+        font-size: 16px;
+      }
+
+      .headline a {
+        padding: 12px 24px;
         font-size: 16px;
       }
 
@@ -343,11 +343,52 @@
         padding: 15px;
       }
 
+      .services h2 {
+        font-size: 24px;
+      }
+
       .service-cards {
         flex-direction: column;
       }
 
+      .card {
+        padding: 20px;
+      }
+
+      .who-we-are {
+        max-width: 90%;
+        margin: 40px auto;
+        padding: 20px;
+      }
+
+      .who-we-are h2 {
+        font-size: 22px;
+      }
+
+      .who-we-are p {
+        font-size: 14px;
+      }
+
+      .contact-us > div:first-child {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .contact-us h2 {
+        font-size: 32px;
+      }
+
+      .contact-us img {
+        height: 80px;
+      }
+
+      .contact-us p {
+        max-width: 90%;
+        font-size: 16px;
+      }
+
       .contact-us form {
+        max-width: 90%;
         padding: 15px;
       }
 
@@ -358,17 +399,50 @@
       .contact-us form input,
       .contact-us form textarea {
         width: 100%;
+        padding: 8px;
       }
 
-      .contact-us > div {
-        margin-left: auto;
-        margin-right: auto;
+      .contact-us form button {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+
+      .contact-us > div:last-child {
+        max-width: 90%;
+        padding: 15px;
+      }
+
+      .contact-us > div:last-child > div {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .contact-us > div:last-child > div > div:last-child {
+        text-align: center;
+      }
+
+      .contact-us > div:last-child > div:last-child {
+        font-size: 16px;
+      }
+
+      .contact-us > div:last-child > div:last-child p:last-child {
+        font-size: 14px;
+      }
+
+      .contact-us iframe {
+        height: 300px;
       }
 
       footer {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
         text-align: center;
+        padding: 15px 20px;
+      }
+
+      footer a {
+        margin-left: 0;
       }
     }
   </style>
@@ -376,7 +450,7 @@
 <body id="top">
   <header>
     <div class="nav">
-      <div class="nav-logo">
+      <div style="display: flex; align-items: center; gap: 0px;">
         <img src="NJIGIMAGE.png" alt="NJIG Logo" style="height: 80px;">
         <h2 style="margin: 0;">NORTH JERSEY INSURANCE GROUP</h2>
       </div>
