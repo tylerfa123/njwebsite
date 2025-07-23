@@ -46,7 +46,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding:  padding: 20px 20px 20px 30px;
         z-index: 1000;
         box-shadow: 0 2px 8px rgba(0,0,0,0.4);
         flex-wrap: wrap;
@@ -219,22 +218,118 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
+  .card-link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.card-link:hover {
+  transform: scale(1.03);
+}
+@media (max-width: 800px) {
+  .service-cards {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+}
+.nav-heading {
+  font-size: clamp(19px, 3vw, 24px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.nav-phone {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 25px;
+}
+
+@media (max-width: 800px) {
+  .nav-phone-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -5px;
+  }
+
+  .nav-phone {
+    margin-left: 0;
+  }
+}
+
+  @media (max-width: 800px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  footer > div {
+    justify-content: center !important;
+    text-align: center;
+  }
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 800px) {
+  .nav-links {
+    justify-content: center !important;  /* this is the key */
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .nav-links a,
+  .nav-links .dropdown {
+    margin-left: 0 !important;
+  }
+
+  .quote-btn {
+    margin-right: 0;
+    margin-bottom:3px
+  }
+}
+
+
+
+
+
+
+
     </style>
   </head>
   <body id="top">
 
-   <header style="background-image: url('	https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?cs=srgb&dl=pexels-fauxels-3184338.jpg&fm=jpg'); background-size: cover; background-position: center; background-attachment: fixed; padding: 150px 20px 200px; position: relative; color: white;">
-  <div class="nav">
+    <header>
+      <div class="nav">
         <div style="display: flex; align-items: center; gap: 0px;">
           <img src="NJIGIMAGE.png" alt="NJIG Logo" style="height: 80px;">
-          <h2 style="margin: 0;">NORTH JERSEY INSURANCE GROUP</h2>
+          <h2 style="margin: 0;" class="nav-heading">NORTH JERSEY INSURANCE GROUP</h2>
         </div>
-        <div>
-            <a href="tel:2017738989" style="color: white; font-size: 16px; text-decoration: none; display: flex; align-items: center; gap: 8px; margin-left: 25px;">
+        <div class="nav-phone-container">
+  <a href="tel:2017738989" class="nav-phone">
       <img src="https://img.icons8.com/ios/50/ffffff/phone.png" alt="Phone Icon" style="height: 18px;">
       201-773-8989
             </div>
-            <div>
+            <div class="nav-links">
   <a href="index.html#top">Home</a>
   <a href="index.html#about">About</a>
   <div class="dropdown">
@@ -248,7 +343,7 @@
   </div>
   <a href="index.html#contact" class="quote-btn">Get a quote</a>
 </div>
-      </div>
+      </div>  
       <div class="headline">
     <h1>Business Insurance</h1>
     <p>	Comprehensive policies to secure your business and minimize risk.</p>
