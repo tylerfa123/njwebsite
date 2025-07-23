@@ -255,10 +255,17 @@
 }
 
 @media (max-width: 800px) {
-  .nav-phone {
+  .nav-phone-container {
+    width: 100%;
+    display: flex;
     justify-content: center;
-    margin: 10px auto 0 auto;
+    margin-top: 10px;
   }
+
+  .nav-phone {
+    margin-left: 0;
+  }
+}
 
   footer {
     flex-direction: column;
@@ -285,8 +292,8 @@
           <img src="NJIGIMAGE.png" alt="NJIG Logo" style="height: 80px;">
           <h2 style="margin: 0;" class="nav-heading">NORTH JERSEY INSURANCE GROUP</h2>
         </div>
-        <div>
-<a href="tel:2017738989" class="nav-phone">
+        <div class="nav-phone-container">
+  <a href="tel:2017738989" class="nav-phone">
       <img src="https://img.icons8.com/ios/50/ffffff/phone.png" alt="Phone Icon" style="height: 18px;">
       201-773-8989
             </div>
