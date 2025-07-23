@@ -1,0 +1,319 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insurance Group</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.35);
+        z-index: 0;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background-color: #f5f7fa;
+        color: #1d1d1f;
+      }
+      header {
+        background-image: url('https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        padding: 150px 20px 200px;
+        position: relative;
+      }
+
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(to right, #0f172a, #1e293b);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:  padding: 20px 20px 20px 30px;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        flex-wrap: wrap;
+      }
+
+      .nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        position: relative;
+        z-index: 1;
+      }
+
+      .quote-btn {
+        background-color: #1e40af;
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin-right: 12px;
+      }
+
+      .headline {
+        max-width: 800px;
+        margin: 180px auto 0;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .headline h1 {
+        font-size: 56px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .headline p {
+        font-size: 22px;
+        margin-bottom: 30px;
+      }
+      .headline a {
+        background-color: #1e40af;
+        color: white;
+        padding: 14px 30px;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .services {
+        max-width: 1150px;
+        margin: -50px auto 40px;
+        background-color: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        position: relative;
+        z-index: 2;
+      }
+      .services h2 {
+        font-size: 28px;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      .service-cards {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: nowrap;
+      }
+      .card {
+        flex: 1;
+        background-color: #f9fafb;
+        border-radius: 16px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      }
+      .card h3 {
+        margin-top: 15px;
+        font-size: 18px;
+      }
+      .card p {
+        font-size: 14px;
+        margin-top: 10px;
+        color: #4b5563;
+      }
+      .who-we-are {
+        max-width: 1100px;
+        margin: 60px auto;
+        background-color: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+      .who-we-are h2 {
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+      .who-we-are-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 0px;
+        flex-wrap: wrap;
+      }
+      .who-we-are p {
+        font-size: 16px;
+        color: #374151;
+        margin-bottom: 18px;
+          line-height: 1.6;
+      }
+      .who-we-are button {
+        background-color: #1e40af;
+        color: white;
+        padding: 12px 24px;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      footer {
+        background-color: #1e293b;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        flex-wrap: wrap;
+      }
+      footer a {
+        margin-left: 15px;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body id="top">
+
+    <header>
+      <div class="nav">
+        <div style="display: flex; align-items: center; gap: 0px;">
+          <img src="NJIGIMAGE.png" alt="NJIG Logo" style="height: 80px;">
+          <h2 style="margin: 0;">NORTH JERSEY INSURANCE GROUP</h2>
+        </div>
+        <div>
+          <a href="#top">Home</a>
+<a href="#about">About</a>
+
+          <a href="#">Services</a>
+          <a href="#contact" class="quote-btn">Get a quote</a>
+        </div>
+      </div>
+      <div class="headline">
+        <h1>Insurance Solutions You Can Trust</h1>
+        <p>We provide comprehensive insurance coverage to protect what matters most to you</p>
+        <a href="#contact">Get A Free Quote</a>
+      </div>
+    </header>
+
+    <section class="services">
+      <h2>Our Services</h2>
+      <div class="service-cards">
+        <div class="card">
+          <img src="https://img.icons8.com/ios-filled/50/1e40af/car--v1.png" alt="Auto">
+          <h3>Auto Insurance</h3>
+          <p>Reliable coverage to keep you and your vehicle protected on the road.</p>
+        </div>
+        <div class="card">
+          <img src="https://img.icons8.com/ios-filled/50/1e40af/home.png" alt="Home">
+          <h3>Home Insurance</h3>
+          <p>Safeguard your home and valuables with customized protection plans.</p>
+        </div>
+        <div class="card">
+          <img src="https://img.icons8.com/ios-filled/50/1e40af/briefcase.png" alt="Business">
+          <h3>Business Insurance</h3>
+          <p>Comprehensive policies to secure your business and minimize risk.</p>
+        </div>
+        <div class="card">
+          <img src="https://img.icons8.com/ios-filled/50/1e40af/like--v1.png" alt="Life">
+          <h3>Life Insurance</h3>
+          <p>Ensure peace of mind with life coverage tailored to your loved ones’ future.</p>
+        </div>
+      </div>
+    </section>
+<span id="about" style="position: relative; top: -80px; display: block; height: 1px;"></span>
+
+    <section class="who-we-are">
+    <h1>Who We Are</h1>
+    <div class="who-we-are-content">
+      <div>
+        <p>With over two decades of experience, <strong>North Jersey Insurance Group</strong> is proud to be a trusted, independent insurance agency serving clients throughout New Jersey. Based in Elmwood Park, we offer personalized, full-service insurance solutions designed to fit your unique lifestyle—whether you're looking for affordable auto insurance, reliable homeowners coverage, life protection, or commercial policies tailored to your business needs.</p>
+
+        <p>Our dedicated agents work closely with you to identify the right coverage and carrier, providing one-on-one guidance before, during, and after your policy is in place. We believe in making insurance simple, transparent, and personal—because protecting what matters most shouldn't be complicated.</p>
+
+        <p>At North Jersey Insurance Group, we’re committed to delivering top-tier service backed by access to the highest-rated insurance carriers in the industry. Whether you're seeking peace of mind for your family or protection for your business, we’re here to ensure you get the right coverage at the right price.</p>
+      </div>
+    </div>
+  </section>
+<span id="contact" style="position: relative; top: -70px; display: block; height: 1px;"></span>
+
+<section class="contact-us" style="text-align: center;">
+  <div style="display: flex; justify-content: center; align-items: center; gap: 0px; margin-top: 25px;">
+    <h2 style="font-size: 50px; margin: 0;">Contact Us</h2>
+    <img src="NJIGIMAGE.png" alt="NJIG Logo" style="height: 100px;">
+  </div>
+  <p style="max-width: 700px; margin: 20px auto; font-size: 18px; color: #374151; text-align: center;">
+    Ready to take the next step? Reach out for a free personalized quote tailored to your needs. With so many insurance providers out there, finding the right coverage can be overwhelming. Let our experts help make it simple and stress-free.
+  </p>
+  <form id="contactForm" action="https://formsubmit.co/tylerfalen@gmail.com" method="POST" style="max-width: 700px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+  <div style="display: flex; gap: 10px;">
+    <input type="text" name="First Name" placeholder="First Name" required style="flex: 1; padding: 10px; font-style: normal;">
+    <input type="text" name="Last Name" placeholder="Last Name" required style="flex: 1; padding: 10px; font-style: normal;">
+  </div>
+  <div style="display: flex; gap: 10px;">
+    <input type="email" name="Email" placeholder="Email" required style="flex: 1; padding: 10px; font-style: normal;">
+    <input type="tel" name="Phone" placeholder="Phone" style="flex: 1; padding: 10px; font-style: normal;">
+  </div>
+  <input type="text" name="Address" placeholder="Address" style="padding: 10px; font-style: normal;">
+  <textarea name="Message" placeholder="What type of coverage are you interested in receiving a personalized quote for?" required style="padding: 10px; font-style: normal;"></textarea>
+
+  <!-- Optional FormSubmit Hidden Fields -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="New Quote Request from NJIG Site">
+
+  <button type="submit" style="align-self: center; background-color: #1e40af; color: white; padding: 10px 30px; border: none; margin-top: 20px; margin-bottom: 20px; border-radius: 10px; font-size: 1.25rem;">Submit</button>
+</form>
+
+<script>
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // prevent default submission
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        alert("✅ Thank you for reaching out!");
+        form.reset(); // clear form fields
+      } else {
+        alert("❌ There was an error. Please try again.");
+      }
+    }).catch(error => {
+      alert("❌ There was an error. Please try again.");
+      console.error(error);
+    });
+  });
+</script>
+
+</section>
+
+<footer style="background-color: #1e293b; color: white; padding: 25px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+  <div style="font-size: 20px; font-weight: bold;">Contact Us</div>
+  <div style="display: flex; align-items: center; gap: 8px;">
+    <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email Icon" style="height: 20px; filter: brightness(0) invert(1);">
+    <p style="margin: 0;">jmalq@njinsgrp.com</p>
+  </div>
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="https://cdn-icons-png.flaticon.com/512/455/455705.png" alt="Phone Icon" style="height: 24px; filter: brightness(0) invert(1);">
+    <span>(201) 773-8989</span>
+  </div>
+</footer>
+
+  </body>
+  </html>
