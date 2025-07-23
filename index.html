@@ -219,6 +219,16 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
+  .card-link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.card-link:hover {
+  transform: scale(1.03);
+}
+
     </style>
   </head>
   <body id="top">
@@ -259,27 +269,35 @@
     <section class="services">
       <h2>Our Services</h2>
       <div class="service-cards">
-        <div class="card">
-          <img src="https://img.icons8.com/ios-filled/50/1e40af/car--v1.png" alt="Auto">
-          <h3>Auto Insurance</h3>
-          <p>Reliable coverage to keep you and your vehicle protected on the road.</p>
-        </div>
-        <div class="card">
-          <img src="https://img.icons8.com/ios-filled/50/1e40af/home.png" alt="Home">
-          <h3>Home Insurance</h3>
-          <p>Safeguard your home and valuables with customized protection plans.</p>
-        </div>
-        <div class="card">
-          <img src="https://img.icons8.com/ios-filled/50/1e40af/briefcase.png" alt="Business">
-          <h3>Business Insurance</h3>
-          <p>Comprehensive policies to secure your business and minimize risk.</p>
-        </div>
-        <div class="card">
-          <img src="https://img.icons8.com/ios-filled/50/1e40af/like--v1.png" alt="Life">
-          <h3>Life Insurance</h3>
-          <p>Ensure peace of mind with life coverage tailored to your loved ones’ future.</p>
-        </div>
-      </div>
+  <a href="auto.html" class="card-link">
+    <div class="card">
+      <img src="https://img.icons8.com/ios-filled/50/1e40af/car--v1.png" alt="Auto">
+      <h3>Auto Insurance</h3>
+      <p>Reliable coverage to keep you and your vehicle protected on the road.</p>
+    </div>
+  </a>
+  <a href="home.html" class="card-link">
+    <div class="card">
+      <img src="https://img.icons8.com/ios-filled/50/1e40af/home.png" alt="Home">
+      <h3>Home Insurance</h3>
+      <p>Safeguard your home and valuables with customized protection plans.</p>
+    </div>
+  </a>
+  <a href="business.html" class="card-link">
+    <div class="card">
+      <img src="https://img.icons8.com/ios-filled/50/1e40af/briefcase.png" alt="Business">
+      <h3>Business Insurance</h3>
+      <p>Comprehensive policies to secure your business and minimize risk.</p>
+    </div>
+  </a>
+  <a href="life.html" class="card-link">
+    <div class="card">
+      <img src="https://img.icons8.com/ios-filled/50/1e40af/like--v1.png" alt="Life">
+      <h3>Life Insurance</h3>
+      <p>Ensure peace of mind with life coverage tailored to your loved ones’ future.</p>
+    </div>
+  </a>
+</div>
     </section>
 <span id="about" style="position: relative; top: -80px; display: block; height: 1px;"></span>
 
