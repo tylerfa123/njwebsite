@@ -50,7 +50,6 @@
       z-index: 1000;
       box-shadow: 0 2px 8px rgba(0,0,0,0.4);
       flex-wrap: wrap;
-      padding: 10px 20px;
     }
 
     .nav a {
@@ -67,21 +66,6 @@
       padding: 10px 20px;
       border-radius: 20px;
       margin-right: 12px;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 4px;
-      z-index: 1001;
-    }
-
-    .hamburger span {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      border-radius: 2px;
     }
 
     .headline {
@@ -264,132 +248,42 @@
       transform: scale(1.03);
     }
 
-    @media (max-width: 768px) {
-      header {
-        padding: 80px 15px 100px;
-      }
-
-      .nav {
-        padding: 10px 15px;
-      }
-
-      .nav > div:nth-child(1) {
-        flex: 1;
-      }
-
-      .nav > div:nth-child(2) {
-        display: none;
-      }
-
-      .nav > div:nth-child(3) {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: linear-gradient(to right, #0f172a, #1e293b);
-        padding: 10px 0;
-        position: absolute;
-        top: 100%;
-        left: 0;
-      }
-
-      .nav-menu.active {
-        display: flex;
-      }
-
-      .nav-menu a {
-        margin: 10px 0;
-        text-align: center;
-      }
-
-      .dropdown {
-        width: 100%;
-        text-align: center;
-      }
-
-      .dropdown-content {
-        position: static;
-        width: 100%;
-      }
-
-      .headline {
-        max-width: 90%;
-        margin: 100px auto 0;
-      }
-
-      .headline h1 {
-        font-size: 28px;
-      }
-
-      .headline p {
-        font-size: 16px;
-      }
-
-      .headline a {
-        padding: 12px 24px;
-        font-size: 16px;
-      }
-
-      .services {
-        max-width: 90%;
-        margin: -30px auto 20px;
-        padding: 15px;
-      }
-
-      .services h2 {
-        font-size: 24px;
-      }
-
+    /* Mobile-specific styles */
+    @media screen and (max-width: 768px) {
       .service-cards {
         flex-direction: column;
+        flex-wrap: wrap;
       }
 
       .card {
-        padding: 20px;
+        width: 100%;
+        margin-bottom: 15px;
       }
 
-      .who-we-are {
-        max-width: 90%;
-        margin: 40px auto;
-        padding: 20px;
-      }
-
-      .who-we-are h2 {
-        font-size: 22px;
-      }
-
-      .who-we-are p {
-        font-size: 14px;
-      }
-
-      .contact-us > div:first-child {
+      .nav {
         flex-direction: column;
-        gap: 10px;
+        padding: 10px 20px;
       }
 
-      .contact-us h2 {
-        font-size: 32px;
+      .nav a, .nav .quote-btn {
+        margin: 10px 0;
       }
 
-      .contact-us img {
-        height: 80px;
+      .nav div {
+        text-align: center;
+        margin: 10px 0;
       }
 
-      .contact-us p {
-        max-width: 90%;
-        font-size: 16px;
+      .headline h1 {
+        font-size: 36px;
+      }
+
+      .headline p {
+        font-size: 18px;
       }
 
       .contact-us form {
-        max-width: 90%;
-        padding: 15px;
+        padding: 20px;
       }
 
       .contact-us form div {
@@ -399,50 +293,15 @@
       .contact-us form input,
       .contact-us form textarea {
         width: 100%;
-        padding: 8px;
-      }
-
-      .contact-us form button {
-        font-size: 1rem;
-        padding: 10px 20px;
-      }
-
-      .contact-us > div:last-child {
-        max-width: 90%;
-        padding: 15px;
-      }
-
-      .contact-us > div:last-child > div {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-      }
-
-      .contact-us > div:last-child > div > div:last-child {
-        text-align: center;
-      }
-
-      .contact-us > div:last-child > div:last-child {
-        font-size: 16px;
-      }
-
-      .contact-us > div:last-child > div:last-child p:last-child {
-        font-size: 14px;
-      }
-
-      .contact-us iframe {
-        height: 300px;
       }
 
       footer {
         flex-direction: column;
-        gap: 15px;
         text-align: center;
-        padding: 15px 20px;
       }
 
-      footer a {
-        margin-left: 0;
+      footer div {
+        margin: 10px 0;
       }
     }
   </style>
@@ -454,16 +313,13 @@
         <img src="NJIGIMAGE.png" alt="NJIG Logo" style="height: 80px;">
         <h2 style="margin: 0;">NORTH JERSEY INSURANCE GROUP</h2>
       </div>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="nav-menu">
+      <div>
         <a href="tel:2017738989" style="color: white; font-size: 16px; text-decoration: none; display: flex; align-items: center; gap: 8px; margin-left: 25px;">
           <img src="https://img.icons8.com/ios/50/ffffff/phone.png" alt="Phone Icon" style="height: 18px;">
           201-773-8989
         </a>
+      </div>
+      <div>
         <a href="index.html#top">Home</a>
         <a href="index.html#about">About</a>
         <div class="dropdown">
@@ -521,7 +377,7 @@
   <span id="about" style="position: relative; top: -80px; display: block; height: 1px;"></span>
 
   <section class="who-we-are">
-    <h2>Who We Are</h2>
+    <h1>Who We Are</h1>
     <div class="who-we-are-content">
       <div>
         <p>With over two decades of experience, <strong>North Jersey Insurance Group</strong> is proud to be a trusted, independent insurance agency serving clients throughout New Jersey. Based in Elmwood Park, we offer personalized, full-service insurance solutions designed to fit your unique lifestyle—whether you're looking for affordable auto insurance, reliable homeowners coverage, life protection, or commercial policies tailored to your business needs.</p>
@@ -604,45 +460,27 @@
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const hamburger = document.querySelector('.hamburger');
-      const navMenu = document.querySelector('.nav-menu');
-
-      if (hamburger && navMenu) {
-        hamburger.addEventListener('click', () => {
-          navMenu.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-          link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-          });
-        });
-      }
-
-      const form = document.getElementById("contactForm");
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const formData = new FormData(form);
-        const fname = form.querySelector('input[name="First Name"]').value;
-        const lname = form.querySelector('input[name="Last Name"]').value;
-        document.getElementById("dynamicSubject").value = `Quote Request from ${fname} ${lname}`;
-
-        fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        }).then(response => {
-          if (response.ok) {
-            alert("✅ Thank you for reaching out!");
-            form.reset();
-          } else {
-            alert("❌ There was an error. Please try again.");
-          }
-        }).catch(error => {
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const fname = form.querySelector('input[name="First Name"]').value;
+      const lname = form.querySelector('input[name="Last Name"]').value;
+      document.getElementById("dynamicSubject").value = `Quote Request from ${fname} ${lname}`;
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          alert("✅ Thank you for reaching out!");
+          form.reset();
+        } else {
           alert("❌ There was an error. Please try again.");
-          console.error(error);
-        });
+        }
+      }).catch(error => {
+        alert("❌ There was an error. Please try again.");
+        console.error(error);
       });
     });
   </script>
