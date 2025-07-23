@@ -244,14 +244,35 @@
   text-overflow: ellipsis;
   max-width: 100%;
 }
+.nav-phone {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 25px;
+}
 
 @media (max-width: 800px) {
   .nav-phone {
-    margin: 10px auto 0 auto !important;
     justify-content: center;
-    display: flex;
+    margin: 10px auto 0 auto;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  footer > div {
+    justify-content: center !important;
   }
 }
+
+
 
 
     </style>
@@ -265,11 +286,9 @@
           <h2 style="margin: 0;" class="nav-heading">NORTH JERSEY INSURANCE GROUP</h2>
         </div>
         <div>
-            <a href="tel:2017738989" class="nav-phone" style="color: white; font-size: 16px; text-decoration: none; display: flex; align-items: center; gap: 8px; margin-left: 25px;">
-  <img src="https://img.icons8.com/ios/50/ffffff/phone.png" alt="Phone Icon" style="height: 18px;">
-  201-773-8989
-</a>
-
+<a href="tel:2017738989" class="nav-phone">
+      <img src="https://img.icons8.com/ios/50/ffffff/phone.png" alt="Phone Icon" style="height: 18px;">
+      201-773-8989
             </div>
             <div>
   <a href="index.html#top">Home</a>
