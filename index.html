@@ -238,13 +238,47 @@
   }
 }
 .nav-heading {
-  font-size: clamp(20px, 3vw, 24px);
+  font-size: clamp(18px, 3vw, 24px);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
 }
 
+.site-footer {
+  background-color: #1e293b;
+  color: white;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-size: 18px;
+  gap: 20px;
+}
+
+.site-footer .footer-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+/* Shrink footer on screens 800px and below */
+@media (max-width: 800px) {
+  .site-footer {
+    font-size: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .site-footer .footer-item {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}
 
 
     </style>
@@ -424,13 +458,13 @@ document.getElementById("dynamicSubject").value = `Quote Request from ${fname} $
 
 </section>
 
-<footer style="background-color: #1e293b; color: white; padding: 25px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-  <div style="font-size: 20px; font-weight: bold;">Contact Us</div>
-  <div style="display: flex; align-items: center; gap: 8px;">
+<footer class="site-footer" style="background-color: #1e293b; color: white; padding: 25px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+  <div class="site-footer" style="font-size: 20px; font-weight: bold;">Contact Us</div>
+  <div class="site-footer" style="display: flex; align-items: center; gap: 8px;">
     <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email Icon" style="height: 20px; filter: brightness(0) invert(1);">
     <p style="margin: 0;">jmalq@njinsgrp.com</p>
   </div>
-  <div style="display: flex; align-items: center; gap: 10px;">
+  <div class="site-footer" style="display: flex; align-items: center; gap: 10px;">
     <img src="https://img.icons8.com/ios/50/ffffff/phone.png" alt="Phone Icon" style="height: 18px;">
     <span>201-773-8989</span>
   </div>
