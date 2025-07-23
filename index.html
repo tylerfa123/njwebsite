@@ -114,7 +114,7 @@
         display: flex;
         justify-content: space-between;
         gap: 15px;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
       }
       .card {
         flex: 1;
@@ -227,9 +227,142 @@
 .card-link:hover {
   transform: scale(1.03);
 }
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .nav > div {
+    width: 100%;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .headline h1 {
+    font-size: 36px;
+  }
+
+  .headline p {
+    font-size: 18px;
+  }
+
+  .headline a {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .service-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: left;
+  }
+
+  .who-we-are-content {
+    flex-direction: column;
+  }
+
+  form#contactForm {
+    padding: 10px;
+  }
+
+  form#contactForm > div {
+    flex-direction: column;
+  }
+
+  .nav h2 {
+    font-size: 18px;
+  }
+
+  header {
+    padding: 100px 15px 150px;
+    background-attachment: scroll; /* fallback for mobile smoothness */
+  }
+
+  iframe {
+    height: 250px !important;
+  }
+}
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0f172a;
+    padding: 10px 0;
+  }
+
+  .nav-links a,
+  .dropdown .dropbtn {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background-color: #1e293b;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown .dropbtn::after {
+    content: " ▼";
+    font-size: 12px;
+  }
+
+  .dropdown .dropbtn {
+    pointer-events: none;
+  }
+
+  .dropdown-content a {
+    padding-left: 30px;
+  }
+}
+
 
     </style>
   </head>
+  <script>
+  function toggleMenu() {
+    const links = document.getElementById("navLinks");
+    links.classList.toggle("active");
+  }
+</script>
+
   <body id="top">
 
     <header>
@@ -243,7 +376,7 @@
       <img src="https://img.icons8.com/ios/50/ffffff/phone.png" alt="Phone Icon" style="height: 18px;">
       201-773-8989
             </div>
-            <div>
+            <div class="nav-links" id="navLinks">
   <a href="index.html#top">Home</a>
   <a href="index.html#about">About</a>
   <div class="dropdown">
@@ -254,6 +387,14 @@
       <a href="business.html">Business Insurance</a>
       <a href="life.html">Life Insurance</a>
     </div>
+  </div>
+  <a href="index.html#contact" class="quote-btn">Get a quote</a>
+</div>
+
+<div class="hamburger" onclick="toggleMenu()">
+  ☰
+</div>
+
   </div>
   <a href="index.html#contact" class="quote-btn">Get a quote</a>
 </div>
