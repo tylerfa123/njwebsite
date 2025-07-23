@@ -1,421 +1,576 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Insurance Group</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insurance Group</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-      header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.35);
-        z-index: 0;
-      }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.35);
+      z-index: 0;
+    }
 
-      body {
-        margin: 0;
-        font-family: 'Inter', sans-serif;
-        background-color: #f5f7fa;
-        color: #1d1d1f;
-      }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7fa;
+      color: #1d1d1f;
+    }
+
+    header {
+      background-image: url('https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      padding: 150px 20px 200px;
+      position: relative;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(to right, #0f172a, #1e293b);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      flex-wrap: wrap;
+      padding: 10px 20px;
+    }
+
+    .nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-btn {
+      background-color: #1e40af;
+      padding: 10px 20px;
+      border-radius: 20px;
+      margin-right: 12px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0px;
+    }
+
+    .headline {
+      max-width: 800px;
+      margin: 180px auto 0;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .headline h1 {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .headline p {
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    .headline a {
+      background-color: #1e40af;
+      color: white;
+      padding: 14px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .services {
+      max-width: 1150px;
+      margin: -50px auto 40px;
+      background-color: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .services h2 {
+      font-size: 28px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .service-cards {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: nowrap;
+    }
+
+    .card {
+      flex: 1;
+      background-color: #f9fafb;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      margin-top: 15px;
+      font-size: 18px;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin-top: 10px;
+      color: #4b5563;
+    }
+
+    .who-we-are {
+      max-width: 1100px;
+      margin: 60px auto;
+      background-color: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .who-we-are h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .who-we-are-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 0px;
+      flex-wrap: wrap;
+    }
+
+    .who-we-are p {
+      font-size: 16px;
+      color: #374151;
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+
+    .who-we-are button {
+      background-color: #1e40af;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: #1e293b;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      margin-left: 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 8px 0;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: linear-gradient(to right, #0f172a, #1e293b);
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1001;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      padding-left: 5px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #334155;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease;
+    }
+
+    .card-link:hover {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 768px) {
       header {
-        background-image: url('https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        color: white;
-        padding: 150px 20px 200px;
-        position: relative;
+        padding: 80px 15px 100px;
       }
 
       .nav {
-        position: fixed;
-        top: 0;
-        left: 0;
+        flex-wrap: wrap;
+        padding: 10px 15px;
+      }
+
+      .nav-logo {
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+      }
+
+      .nav-logo h2 {
+        font-size: 1.2rem;
+      }
+
+      .nav-logo .phone-link {
+        margin-left: 0;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
         width: 100%;
         background: linear-gradient(to right, #0f172a, #1e293b);
+        padding: 10px 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+      }
+
+      .nav-menu.active {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 1000;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-        flex-wrap: wrap;
       }
 
-      .nav a {
-        margin-left: 20px;
-        text-decoration: none;
-        color: white;
-        font-weight: 500;
-        position: relative;
-        z-index: 1;
-      }
-
-      .quote-btn {
-        background-color: #1e40af;
-        padding: 10px 20px;
-        border-radius: 20px;
-        margin-right: 12px;
-      }
-
-      .headline {
-        max-width: 800px;
-        margin: 180px auto 0;
+      .nav-menu a {
+        margin: 10px 0;
         text-align: center;
-        position: relative;
-        z-index: 1;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .dropdown {
+        width: 100%;
+        text-align: center;
+      }
+
+      .dropdown-content {
+        position: static;
+        width: 100%;
       }
 
       .headline h1 {
-        font-size: 56px;
-        font-weight: 700;
-        margin-bottom: 20px;
-      }
-      .headline p {
-        font-size: 22px;
-        margin-bottom: 30px;
-      }
-      .headline a {
-        background-color: #1e40af;
-        color: white;
-        padding: 14px 30px;
-        font-size: 18px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-      }
-      .services {
-        max-width: 1150px;
-        margin: -50px auto 40px;
-        background-color: white;
-        padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        position: relative;
-        z-index: 2;
-      }
-      .services h2 {
         font-size: 28px;
-        margin-bottom: 40px;
-        text-align: center;
       }
+
+      .headline p {
+        font-size: 16px;
+      }
+
+      .services {
+        max-width: 90%;
+        margin: -30px auto 20px;
+        padding: 15px;
+      }
+
       .service-cards {
-        display: flex;
-        justify-content: space-between;
-        gap: 15px;
-        flex-wrap: nowrap;
+        flex-direction: column;
       }
-      .card {
-        flex: 1;
-        background-color: #f9fafb;
-        border-radius: 16px;
-        padding: 25px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+
+      .contact-us form {
+        padding: 15px;
       }
-      .card h3 {
-        margin-top: 15px;
-        font-size: 18px;
+
+      .contact-us form div {
+        flex-direction: column;
       }
-      .card p {
-        font-size: 14px;
-        margin-top: 10px;
-        color: #4b5563;
+
+      .contact-us form input,
+      .contact-us form textarea {
+        width: 100%;
       }
-      .who-we-are {
-        max-width: 1100px;
-        margin: 60px auto;
-        background-color: white;
-        padding: 40px;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+      .contact-us > div {
+        margin-left: auto;
+        margin-right: auto;
       }
-      .who-we-are h2 {
-        font-size: 24px;
-        margin-bottom: 30px;
-      }
-      .who-we-are-content {
-        display: flex;
-        justify-content: space-between;
-        gap: 0px;
-        flex-wrap: wrap;
-      }
-      .who-we-are p {
-        font-size: 16px;
-        color: #374151;
-        margin-bottom: 18px;
-          line-height: 1.6;
-      }
-      .who-we-are button {
-        background-color: #1e40af;
-        color: white;
-        padding: 12px 24px;
-        font-size: 16px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        margin-top: 10px;
-      }
+
       footer {
-        background-color: #1e293b;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 40px;
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
       }
-      footer a {
-        margin-left: 15px;
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-      }
-      .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  .dropbtn {
-    color: white;
-    font-weight: 500;
-    text-decoration: none;
-    padding: 8px 0;
-    display: inline-block;
-  }
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: linear-gradient(to right, #0f172a, #1e293b);
-  min-width: 180px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 1001;
-}
-
-.dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  padding-left: 5px;
-}
-
-.dropdown-content a:hover {
-  background-color: #334155;
-}
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  .card-link {
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.2s ease;
-}
-
-.card-link:hover {
-  transform: scale(1.03);
-}
-
-    </style>
-  </head>
-  <body id="top">
-
-    <header>
-      <div class="nav">
-        <div style="display: flex; align-items: center; gap: 0px;">
-          <img src="NJIGIMAGE.png" alt="NJIG Logo" style="height: 80px;">
-          <h2 style="margin: 0;">NORTH JERSEY INSURANCE GROUP</h2>
+    }
+  </style>
+</head>
+<body id="top">
+  <header>
+    <div class="nav">
+      <div class="nav-logo">
+        <img src="NJIGIMAGE.png" alt="NJIG Logo" style="height: 80px;">
+        <h2 style="margin: 0;">NORTH JERSEY INSURANCE GROUP</h2>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-menu">
+        <a href="tel:2017738989" style="color: white; font-size: 16px; text-decoration: none; display: flex; align-items: center; gap: 8px; margin-left: 25px;">
+          <img src="https://img.icons8.com/ios/50/ffffff/phone.png" alt="Phone Icon" style="height: 18px;">
+          201-773-8989
+        </a>
+        <a href="index.html#top">Home</a>
+        <a href="index.html#about">About</a>
+        <div class="dropdown">
+          <a href="#" class="dropbtn">Services</a>
+          <div class="dropdown-content">
+            <a href="auto.html">Auto Insurance</a>
+            <a href="home.html">Home Insurance</a>
+            <a href="business.html">Business Insurance</a>
+            <a href="life.html">Life Insurance</a>
+          </div>
         </div>
-        <div>
-            <a href="tel:2017738989" style="color: white; font-size: 16px; text-decoration: none; display: flex; align-items: center; gap: 8px; margin-left: 25px;">
-      <img src="https://img.icons8.com/ios/50/ffffff/phone.png" alt="Phone Icon" style="height: 18px;">
-      201-773-8989
-            </div>
-            <div>
-  <a href="index.html#top">Home</a>
-  <a href="index.html#about">About</a>
-  <div class="dropdown">
-    <a href="#" class="dropbtn">Services</a>
-    <div class="dropdown-content">
-      <a href="auto.html">Auto Insurance</a>
-      <a href="home.html">Home Insurance</a>
-      <a href="business.html">Business Insurance</a>
-      <a href="life.html">Life Insurance</a>
-    </div>
-  </div>
-  <a href="index.html#contact" class="quote-btn">Get a quote</a>
-</div>
+        <a href="index.html#contact" class="quote-btn">Get a quote</a>
       </div>
-      <div class="headline">
-        <h1>Insurance Solutions You Can Trust</h1>
-        <p>We provide comprehensive insurance coverage to protect what matters most to you</p>
-        <a href="#contact">Get A Free Quote</a>
-      </div>
-    </header>
+    </div>
+    <div class="headline">
+      <h1>Insurance Solutions You Can Trust</h1>
+      <p>We provide comprehensive insurance coverage to protect what matters most to you</p>
+      <a href="#contact">Get A Free Quote</a>
+    </div>
+  </header>
 
-    <section class="services">
-      <h2>Our Services</h2>
-      <div class="service-cards">
-  <a href="auto.html" class="card-link">
-    <div class="card">
-      <img src="https://img.icons8.com/ios-filled/50/1e40af/car--v1.png" alt="Auto">
-      <h3>Auto Insurance</h3>
-      <p>Reliable coverage to keep you and your vehicle protected on the road.</p>
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <a href="auto.html" class="card-link">
+        <div class="card">
+          <img src="https://img.icons8.com/ios-filled/50/1e40af/car--v1.png" alt="Auto">
+          <h3>Auto Insurance</h3>
+          <p>Reliable coverage to keep you and your vehicle protected on the road.</p>
+        </div>
+      </a>
+      <a href="home.html" class="card-link">
+        <div class="card">
+          <img src="https://img.icons8.com/ios-filled/50/1e40af/home.png" alt="Home">
+          <h3>Home Insurance</h3>
+          <p>Safeguard your home and valuables with customized protection plans.</p>
+        </div>
+      </a>
+      <a href="business.html" class="card-link">
+        <div class="card">
+          <img src="https://img.icons8.com/ios-filled/50/1e40af/briefcase.png" alt="Business">
+          <h3>Business Insurance</h3>
+          <p>Comprehensive policies to secure your business and minimize risk.</p>
+        </div>
+      </a>
+      <a href="life.html" class="card-link">
+        <div class="card">
+          <img src="https://img.icons8.com/ios-filled/50/1e40af/like--v1.png" alt="Life">
+          <h3>Life Insurance</h3>
+          <p>Ensure peace of mind with life coverage tailored to your loved ones’ future.</p>
+        </div>
+      </a>
     </div>
-  </a>
-  <a href="home.html" class="card-link">
-    <div class="card">
-      <img src="https://img.icons8.com/ios-filled/50/1e40af/home.png" alt="Home">
-      <h3>Home Insurance</h3>
-      <p>Safeguard your home and valuables with customized protection plans.</p>
-    </div>
-  </a>
-  <a href="business.html" class="card-link">
-    <div class="card">
-      <img src="https://img.icons8.com/ios-filled/50/1e40af/briefcase.png" alt="Business">
-      <h3>Business Insurance</h3>
-      <p>Comprehensive policies to secure your business and minimize risk.</p>
-    </div>
-  </a>
-  <a href="life.html" class="card-link">
-    <div class="card">
-      <img src="https://img.icons8.com/ios-filled/50/1e40af/like--v1.png" alt="Life">
-      <h3>Life Insurance</h3>
-      <p>Ensure peace of mind with life coverage tailored to your loved ones’ future.</p>
-    </div>
-  </a>
-</div>
-    </section>
-<span id="about" style="position: relative; top: -80px; display: block; height: 1px;"></span>
+  </section>
+  <span id="about" style="position: relative; top: -80px; display: block; height: 1px;"></span>
 
-    <section class="who-we-are">
-    <h1>Who We Are</h1>
+  <section class="who-we-are">
+    <h2>Who We Are</h2>
     <div class="who-we-are-content">
       <div>
         <p>With over two decades of experience, <strong>North Jersey Insurance Group</strong> is proud to be a trusted, independent insurance agency serving clients throughout New Jersey. Based in Elmwood Park, we offer personalized, full-service insurance solutions designed to fit your unique lifestyle—whether you're looking for affordable auto insurance, reliable homeowners coverage, life protection, or commercial policies tailored to your business needs.</p>
-
         <p>Our dedicated agents work closely with you to identify the right coverage and carrier, providing one-on-one guidance before, during, and after your policy is in place. We believe in making insurance simple, transparent, and personal—because protecting what matters most shouldn't be complicated.</p>
-
         <p>At North Jersey Insurance Group, we’re committed to delivering top-tier service backed by access to the highest-rated insurance carriers in the industry. Whether you're seeking peace of mind for your family or protection for your business, we’re here to ensure you get the right coverage at the right price.</p>
       </div>
     </div>
   </section>
-<span id="contact" style="position: relative; top: -80px; display: block; height: 1px;"></span>
+  <span id="contact" style="position: relative; top: -80px; display: block; height: 1px;"></span>
 
-<section class="contact-us" style="text-align: center;">
-  <div style="display: flex; justify-content: center; align-items: center; gap: 0px; margin-top: 25px;">
-    <h2 style="font-size: 50px; margin: 0;">Contact Us</h2>
-    <img src="NJIGIMAGE.png" alt="NJIG Logo" style="height: 100px;">
-  </div>
-  <p style="max-width: 700px; margin: 20px auto; font-size: 18px; color: #374151; text-align: center;">
-    Ready to take the next step? Reach out for a free personalized quote tailored to your needs. With so many insurance providers out there, finding the right coverage can be overwhelming. Let our experts help make it simple and stress-free.
-  </p>
-  <form id="contactForm" action="https://formsubmit.co/tylerfalen@gmail.com" method="POST" style="max-width: 700px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
-  <div style="display: flex; gap: 10px;">
-    <input type="text" name="First Name" placeholder="First Name" required style="flex: 1; padding: 10px; font-style: normal;">
-    <input type="text" name="Last Name" placeholder="Last Name" required style="flex: 1; padding: 10px; font-style: normal;">
-  </div>
-  <div style="display: flex; gap: 10px;">
-    <input type="email" name="Email" placeholder="Email" required style="flex: 1; padding: 10px; font-style: normal;">
-    <input type="tel" name="Phone" placeholder="Phone" style="flex: 1; padding: 10px; font-style: normal;">
-  </div>
-  <input type="text" name="Address" placeholder="Address" style="padding: 10px; font-style: normal;">
-  <textarea name="Message" placeholder="What type of coverage are you interested in receiving a personalized quote for?" required style="padding: 10px; font-style: normal;"></textarea>
+  <section class="contact-us" style="text-align: center;">
+    <div style="display: flex; justify-content: center; align-items: center; gap: 0px; margin-top: 25px;">
+      <h2 style="font-size: 50px; margin: 0;">Contact Us</h2>
+      <img src="NJIGIMAGE.png" alt="NJIG Logo" style="height: 100px;">
+    </div>
+    <p style="max-width: 700px; margin: 20px auto; font-size: 18px; color: #374151; text-align: center;">
+      Ready to take the next step? Reach out for a free personalized quote tailored to your needs. With so many insurance providers out there, finding the right coverage can be overwhelming. Let our experts help make it simple and stress-free.
+    </p>
+    <form id="contactForm" action="https://formsubmit.co/tylerfalen@gmail.com" method="POST" style="max-width: 700px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; gap: 10px;">
+        <input type="text" name="First Name" placeholder="First Name" required style="flex: 1; padding: 10px; font-style: normal;">
+        <input type="text" name="Last Name" placeholder="Last Name" required style="flex: 1; padding: 10px; font-style: normal;">
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <input type="email" name="Email" placeholder="Email" required style="flex: 1; padding: 10px; font-style: normal;">
+        <input type="tel" name="Phone" placeholder="Phone" style="flex: 1; padding: 10px; font-style: normal;">
+      </div>
+      <input type="text" name="Address" placeholder="Address" style="padding: 10px; font-style: normal;">
+      <textarea name="Message" placeholder="What type of coverage are you interested in receiving a personalized quote for?" required style="padding: 10px; font-style: normal;"></textarea>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" id="dynamicSubject">
+      <button type="submit" style="align-self: center; background-color: #1e40af; color: white; padding: 10px 30px; border: none; margin-top: 20px; margin-bottom: 20px; border-radius: 10px; font-size: 1.25rem;">Submit</button>
+    </form>
+    <div style="max-width: 1100px; margin: 10px auto 0; text-align: left; padding: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; font-size: 16px; color: #1f2937;">
+        <div style="display: flex; flex-direction: column; justify-content: flex-end;">
+          <p><strong>Open Monday through Friday</strong> 9:30am - 5:00pm</p>
+          <p><strong><u>North Jersey Insurance Group</u></strong><br>
+          358 Midland Ave<br>
+          Garfield, NJ 07026</p>
+          <p style="margin: 0px;">www.njinsgrp.com</p>
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: flex-end; text-align: right;">
+          <p style="margin-bottom: 32px;"><strong><u>Telephone</u>:</strong><br>201-773-8989</p>
+          <p style="margin: 0;"><strong><u>Fax</u>:</strong><br>201-773-8990</p>
+          <p style="margin: 0;"><strong><u>Email</u>:</strong><br>jmalq@njinsgrp.com</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <p style="font-size: 20px; margin: 0;"><strong>Juan C. Malqui</strong></p>
+        <p style="font-style: italic; margin: 0 0 25px;">Agent</p>
+        <p style="font-size: 18px; max-width: 700px; margin: 0 auto;">
+          <strong>Locally Serving:</strong> Bergen County including Elmwood Park, Saddlebrook, Garfield, Fairlawn & Hackensack
+        </p>
+      </div>
+      <div style="margin-top: 30px;">
+        <iframe 
+          src="https://www.google.com/maps?q=358+Midland+Ave,+Garfield,+NJ+07026&output=embed"
+          width="100%" 
+          height="400" 
+          style="border:0; border-radius: 12px;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
 
-  <!-- Optional FormSubmit Hidden Fields -->
-  <input type="hidden" name="_captcha" value="false"><input type="hidden" name="_subject" id="dynamicSubject">
+  <footer style="background-color: #1e293b; color: white; padding: 25px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+    <div style="font-size: 20px; font-weight: bold;">Contact Us</div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email Icon" style="height: 20px; filter: brightness(0) invert(1);">
+      <p style="margin: 0;">jmalq@njinsgrp.com</p>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="https://img.icons8.com/ios/50/ffffff/phone.png" alt="Phone Icon" style="height: 18px;">
+      <span>201-773-8989</span>
+    </div>
+  </footer>
 
-  <button type="submit" style="align-self: center; background-color: #1e40af; color: white; padding: 10px 30px; border: none; margin-top: 20px; margin-bottom: 20px; border-radius: 10px; font-size: 1.25rem;">Submit</button>
-</form>
-<div style="max-width: 1100px; margin: 10px auto 0; text-align: left; padding: 20px;">
-<div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; font-size: 16px; color: #1f2937;">
-  <div style="display: flex; flex-direction: column; justify-content: flex-end;">
-    <p><strong>Open Monday through Friday</strong> 9:30am - 5:00pm</p>
-    <p><strong><u>North Jersey Insurance Group</u></strong><br>
-    358 Midland Ave<br>
-    Garfield, NJ 07026</p>
-    <p style="margin: 0px;">www.njinsgrp.com</p>
-  </div>
-  <div style="display: flex; flex-direction: column; justify-content: flex-end; text-align: right;">
-    <p style="margin-bottom: 32px;"><strong><u>Telephone</u>:</strong><br>201-773-8989</p>
-    <p style="margin: 0;"><strong><u>Fax</u>:</strong><br>201-773-8990</p>
-    <p style="margin: 0;"><strong><u>Email</u>:</strong><br>jmalq@njinsgrp.com</p>
-  </div>
-</div>
-<div style="text-align: center; margin-top: 40px;">
-  <p style="font-size: 20px; margin: 0;"><strong>Juan C. Malqui</strong></p>
-  <p style="font-style: italic; margin: 0 0 25px;">Agent</p>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.nav-menu');
 
-  <p style="font-size: 18px; max-width: 700px; margin: 0 auto;">
-    <strong>Locally Serving:</strong> Bergen County including Elmwood Park, Saddlebrook, Garfield, Fairlawn & Hackensack
-  </p>
-</div>
+      if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+        });
 
-  <div style="margin-top: 30px;">
-    <iframe 
-src="https://www.google.com/maps?q=358+Midland+Ave,+Garfield,+NJ+07026&output=embed"       width="100%" 
-      height="400" 
-      style="border:0; border-radius: 12px;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</div>
-
-<script>
-  const form = document.getElementById("contactForm");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // prevent default submission
-    const formData = new FormData(form);
-const fname = form.querySelector('input[name="First Name"]').value;
-const lname = form.querySelector('input[name="Last Name"]').value;
-document.getElementById("dynamicSubject").value = `Quote Request from ${fname} ${lname}`;
-
-    fetch(form.action, {
-      method: "POST",
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        alert("✅ Thank you for reaching out!");
-        form.reset(); // clear form fields
-      } else {
-        alert("❌ There was an error. Please try again.");
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+          });
+        });
       }
-    }).catch(error => {
-      alert("❌ There was an error. Please try again.");
-      console.error(error);
+
+      const form = document.getElementById("contactForm");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const fname = form.querySelector('input[name="First Name"]').value;
+        const lname = form.querySelector('input[name="Last Name"]').value;
+        document.getElementById("dynamicSubject").value = `Quote Request from ${fname} ${lname}`;
+
+        fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        }).then(response => {
+          if (response.ok) {
+            alert("✅ Thank you for reaching out!");
+            form.reset();
+          } else {
+            alert("❌ There was an error. Please try again.");
+          }
+        }).catch(error => {
+          alert("❌ There was an error. Please try again.");
+          console.error(error);
+        });
+      });
     });
-  });
-</script>
-
-</section>
-
-<footer style="background-color: #1e293b; color: white; padding: 25px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-  <div style="font-size: 20px; font-weight: bold;">Contact Us</div>
-  <div style="display: flex; align-items: center; gap: 8px;">
-    <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email Icon" style="height: 20px; filter: brightness(0) invert(1);">
-    <p style="margin: 0;">jmalq@njinsgrp.com</p>
-  </div>
-  <div style="display: flex; align-items: center; gap: 10px;">
-    <img src="https://img.icons8.com/ios/50/ffffff/phone.png" alt="Phone Icon" style="height: 18px;">
-    <span>201-773-8989</span>
-  </div>
-</footer>
-
-  </body>
-  </html>
+  </script>
+</body>
+</html>
