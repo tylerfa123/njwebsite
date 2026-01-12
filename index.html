@@ -415,7 +415,17 @@
   <p style="max-width: 700px; margin: 20px auto; font-size: 18px; color: #374151; text-align: center;">
     Ready to take the next step? Reach out for a free personalized quote tailored to your needs. With so many insurance providers out there, finding the right coverage can be overwhelming. Let our experts help make it simple and stress-free.
   </p>
-  <form id="contactForm" action="https://formsubmit.co/jmalq@njinsgrp.com" method="POST" style="max-width: 700px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+  <form id="contactForm"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      style="max-width: 700px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+      
+  <input type="hidden" name="form-name" value="contact">
+  <p style="display:none;">
+    <label>Don’t fill this out: <input name="bot-field"></label>
+  </p>
   <div style="display: flex; gap: 10px;">
     <input type="text" name="First Name" placeholder="First Name" required style="flex: 1; padding: 10px; font-style: normal;">
     <input type="text" name="Last Name" placeholder="Last Name" required style="flex: 1; padding: 10px; font-style: normal;">
@@ -426,9 +436,6 @@
   </div>
   <input type="text" name="Address" placeholder="Address" style="padding: 10px; font-style: normal;">
   <textarea name="Message" placeholder="What type of coverage are you interested in receiving a personalized quote for?" required style="padding: 10px; font-style: normal;"></textarea>
-
-  <!-- Optional FormSubmit Hidden Fields -->
-  <input type="hidden" name="_captcha" value="false"><input type="hidden" name="_subject" id="dynamicSubject">
 
   <button type="submit" style="align-self: center; background-color: #1e40af; color: white; padding: 10px 30px; border: none; margin-top: 20px; margin-bottom: 20px; border-radius: 10px; font-size: 1.25rem;">Submit</button>
 </form>
@@ -471,28 +478,28 @@ src="https://www.google.com/maps?q=358+Midland+Ave,+Garfield,+NJ+07026&output=em
 <script>
   const form = document.getElementById("contactForm");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // prevent default submission
-    const formData = new FormData(form);
-const fname = form.querySelector('input[name="First Name"]').value;
-const lname = form.querySelector('input[name="Last Name"]').value;
-document.getElementById("dynamicSubject").value = `Quote Request from ${fname} ${lname}`;
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-    fetch(form.action, {
-      method: "POST",
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      });
+
       if (response.ok) {
-        alert("✅ Thank you for reaching out!");
-        form.reset(); // clear form fields
+        alert("✅ Thank you for reaching out! We’ll get back to you shortly.");
+        form.reset();
       } else {
         alert("❌ There was an error. Please try again.");
       }
-    }).catch(error => {
+    } catch (error) {
       alert("❌ There was an error. Please try again.");
       console.error(error);
-    });
+    }
   });
 </script>
 
@@ -511,4 +518,5 @@ document.getElementById("dynamicSubject").value = `Quote Request from ${fname} $
 </footer>
 
   </body>
+
   </html>
