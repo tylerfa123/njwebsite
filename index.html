@@ -478,32 +478,13 @@ src="https://www.google.com/maps?q=358+Midland+Ave,+Garfield,+NJ+07026&output=em
 </div>
 
 <script>
-  const form = document.getElementById("contactForm");
-
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
-      });
-
-      if (response.ok) {
-        alert("✅ Thank you for reaching out! We’ll get back to you shortly.");
-        form.reset();
-      } else {
-        alert("❌ There was an error. Please try again.");
-      }
-    } catch (error) {
-      alert("❌ There was an error. Please try again.");
-      console.error(error);
-    }
+  document.getElementById("contactForm").addEventListener("submit", function () {
+    setTimeout(() => {
+      alert("✅ Thank you for reaching out! We’ll get back to you shortly.");
+    }, 400);
   });
 </script>
+
 
 </section>
 
@@ -522,4 +503,5 @@ src="https://www.google.com/maps?q=358+Midland+Ave,+Garfield,+NJ+07026&output=em
   </body>
 
   </html>
+
 
