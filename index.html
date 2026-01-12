@@ -478,11 +478,18 @@ src="https://www.google.com/maps?q=358+Midland+Ave,+Garfield,+NJ+07026&output=em
 </div>
 
 <script>
-  document.getElementById("contactForm").addEventListener("submit", function () {
-    setTimeout(() => {
-      alert("✅ Thank you for reaching out! We’ll get back to you shortly.");
-    }, 400);
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", function () {
+    // Let Netlify submit normally, then show a message on the next page load
+    localStorage.setItem("njig_form_submitted", "1");
   });
+
+  // Show success message AFTER the page reloads (meaning submit went through)
+  if (localStorage.getItem("njig_form_submitted") === "1") {
+    localStorage.removeItem("njig_form_submitted");
+    alert("✅ Thank you for reaching out! We’ll get back to you shortly.");
+  }
 </script>
 
 
@@ -503,5 +510,6 @@ src="https://www.google.com/maps?q=358+Midland+Ave,+Garfield,+NJ+07026&output=em
   </body>
 
   </html>
+
 
 
